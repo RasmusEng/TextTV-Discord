@@ -81,7 +81,7 @@ jobs:
           fi
 
           CHANGED=$(git diff --name-only "$BEFORE" "${{ github.sha }}")
-          if echo "$CHANGED" | grep -Eq '^(bot\.py|texttv\.py|requirements\.txt|Dockerfile|\.dockerignore)$'; then
+          if echo "$CHANGED" | grep -Eq '^(bot\.py|texttv\.py|requirements\.txt|Dockerfile|\.dockerignore|\.github/workflows/ci\.yml)$'; then
             echo "build=true" >> $GITHUB_OUTPUT
           else
             echo "build=false" >> $GITHUB_OUTPUT
